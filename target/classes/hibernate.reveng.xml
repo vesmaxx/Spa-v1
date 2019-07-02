@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="Qlspa" match-schema="dbo" match-name="admins"/>
+  <table-filter match-catalog="Qlspa" match-schema="dbo" match-name="customers"/>
+  <table-filter match-catalog="Qlspa" match-schema="dbo" match-name="orders"/>
+  <table-filter match-catalog="Qlspa" match-schema="dbo" match-name="services"/>
+  <table-filter match-catalog="Qlspa" match-schema="dbo" match-name="staffs"/>
+  <table-filter match-catalog="Qlspa" match-schema="dbo" match-name="staffs_order"/>
+</hibernate-reverse-engineering>
