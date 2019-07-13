@@ -3,14 +3,16 @@ package com.vesmax.service;
 import java.util.List;
 
 import com.vesmax.dao.AdminDao;
-
+import com.vesmax.dao.AdminDaoimpl;
 import com.vesmax.model.Admins;
 
 public class AdminServiceimpl implements AdminService {
-
+	
+	 AdminDao adminDao = new AdminDaoimpl();
+	
 	public List<Admins> list() {
 		// TODO Auto-generated method stub
-		return null;
+		return adminDao.list();
 	}
 
 	public Admins findByID(int id) {
@@ -30,7 +32,7 @@ public class AdminServiceimpl implements AdminService {
 
 	public Admins Delete(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return adminDao.findByID(id);
 	}
 
 }

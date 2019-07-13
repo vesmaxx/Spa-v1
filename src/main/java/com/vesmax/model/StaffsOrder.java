@@ -52,7 +52,7 @@ public class StaffsOrder  {
 		this.orders = orders;
 	}
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "staff_Id")
 	public Staffs getStaffs() {
 		return this.staffs;

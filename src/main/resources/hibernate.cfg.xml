@@ -9,5 +9,11 @@
         <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=Qlspa</property>
         <property name="hibernate.connection.username">sa</property>
         <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+        <mapping class="com.vesmax.model.Admins"/>
+        <mapping class="com.vesmax.model.Staffs"/>
+        <mapping class="com.vesmax.model.StaffsOrder"/>
+        <mapping class="com.vesmax.model.Orders"/>
+        <mapping class="com.vesmax.model.Customers"/>
+        <mapping class="com.vesmax.model.Services"/>
     </session-factory>
 </hibernate-configuration>

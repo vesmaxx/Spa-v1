@@ -148,7 +148,7 @@ public class Staffs  {
 		this.staffStatus = staffStatus;
 	}
 
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "staffs")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "staffs")
 	public Set<Admins> getAdminses() {
 		return this.adminses;
 	}
