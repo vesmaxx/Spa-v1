@@ -40,7 +40,7 @@ IF EXISTS ( SELECT * FROM sysdatabases WHERE name=N'Qlspa')
  
   
  go
- Create Table customers
+ Create Table users
  (
  Id int IDENTITY(1,1) not null,
  Username NVARCHAR(10) not null,
@@ -87,11 +87,11 @@ roles int default 0 , -- 0 customer  , 3 -mod , 10 admin
  (
 Id int IDENTITY(1,1) not null,
 times datetime,
-customer_Id int,
+users_Id int,
 services_Id int,
 order_status int
  PRIMARY KEY (Id),
- FOREIGN key (customer_Id) REFERENCES customers,
+ FOREIGN key (users_Id) REFERENCES users,
  FOREIGN key (services_Id) REFERENCES services,
  )
 
