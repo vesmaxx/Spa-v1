@@ -8,7 +8,7 @@ import com.vesmax.service.UserService;
 import com.vesmax.service.UserServiceimpl;
 
 @Controller
-public class TestController {
+public class UserController {
 	UserService userService = new UserServiceimpl();
 	
 	@RequestMapping(value="client")
@@ -21,7 +21,7 @@ public class TestController {
 	public String cde(Model model) {
 		model.addAttribute("admin", userService.list());
 		System.out.println("admin");
-		return "admin/cde";
+		return "admin/user/List";
 	}
 
 }

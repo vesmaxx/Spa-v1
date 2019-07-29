@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 
@@ -15,7 +16,7 @@
 
 <title>SB Admin 2 - Tables</title>
 
-	
+
 
 <link rel="stylesheet" type="text/css"
 	href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
@@ -33,7 +34,8 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
 <script type="text/javascript" language="javascript"
 	src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css">
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css">
 
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -376,111 +378,3 @@
 				</ul>
 
 				</nav>
-				<!-- End of Topbar -->
-
-				<!-- Begin Page Content -->
-				<div class="container-fluid">
-
-					<!-- Page Heading -->
-					<h1 style="margin-left: 70px" class="h3 mb-2 text-gray-800">Tables</h1>
-					
-
-					<!-- DataTales Example -->
-					<div class="card shadow mb-4">
-						<div class="card-header py-3">
-							<button class="btn btn-success" style="float: right;" ><i class ="fa fa-plus"> New</i></button>
-						</div>
-						<div class="card-body">
-							<div class="table-responsive">
-								<table id="example" class="table table-striped table-bordered"
-									style="width: 100%">
-									<thead>
-										<tr>
-											<th>Name</th>
-											<th>Position</th>
-											<th>Office</th>
-											<th>Age</th>
-											<th>Start date</th>
-											<th>Salary</th>
-										</tr>
-									</thead>
-
-									<tbody>
-										<c:forEach items="${admin }" var="item">
-											<tr>
-												<td>${item.username }</td>
-												<td>${item.passwords }</td>
-												<td>${item.name }</td>
-												<td>${item.email }</td>
-												<td>${item.birthday }</td>
-												<td>${item.id }</td>
-											</tr>
-										</c:forEach>
-									</tbody>
-								</table>
-							</div>
-						</div>
-					</div>
-
-
-
-
-				</div>
-				<!-- /.container-fluid -->
-
-			</div>
-			<!-- End of Main Content -->
-
-			<!-- Footer -->
-			<footer class="sticky-footer bg-white">
-			<div class="container my-auto">
-				<div class="copyright text-center my-auto">
-					<span>Copyright &copy; Your Website 2019</span>
-				</div>
-			</div>
-			</footer>
-			<!-- End of Footer -->
-
-		</div>
-		<!-- End of Content Wrapper -->
-
-	</div>
-	<!-- End of Page Wrapper -->
-
-	<!-- Scroll to Top Button-->
-	<a class="scroll-to-top rounded" href="#page-top"> <i
-		class="fas fa-angle-up"></i>
-	</a>
-
-	<!-- Logout Modal-->
-	<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog"
-		aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-					<button class="close" type="button" data-dismiss="modal"
-						aria-label="Close">
-						<span aria-hidden="true">×</span>
-					</button>
-				</div>
-				<div class="modal-body">Select "Logout" below if you are ready
-					to end your current session.</div>
-				<div class="modal-footer">
-					<button class="btn btn-secondary" type="button"
-						data-dismiss="modal">Cancel</button>
-					<a class="btn btn-primary" href="login.html">Logout</a>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- Bootstrap core JavaScript-->
-	<script
-		src="resources/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-
-
-</body>
-
-</html>
