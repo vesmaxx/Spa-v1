@@ -1,5 +1,5 @@
 package com.vesmax.model;
-// Generated Jun 29, 2019 6:03:20 PM by Hibernate Tools 5.1.7.Final
+// Generated Jul 29, 2019 8:28:23 PM by Hibernate Tools 5.1.7.Final
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,7 +16,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "staffs_order", schema = "dbo", catalog = "Qlspa")
-public class StaffsOrder  {
+public class StaffsOrder implements java.io.Serializable {
 
 	private Integer id;
 	private Orders orders;
@@ -52,7 +52,7 @@ public class StaffsOrder  {
 		this.orders = orders;
 	}
 
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "staff_Id")
 	public Staffs getStaffs() {
 		return this.staffs;

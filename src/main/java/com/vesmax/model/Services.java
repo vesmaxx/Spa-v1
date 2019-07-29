@@ -1,5 +1,5 @@
 package com.vesmax.model;
-// Generated Jun 29, 2019 6:03:20 PM by Hibernate Tools 5.1.7.Final
+// Generated Jul 29, 2019 8:28:23 PM by Hibernate Tools 5.1.7.Final
 
 
 import java.util.HashSet;
@@ -18,21 +18,19 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "services", schema = "dbo", catalog = "Qlspa")
-public class Services  {
+public class Services {
 
 	private Integer id;
 	private String name;
 	private Float price;
-	private Integer customerServiceId;
 	private Set<Orders> orderses = new HashSet<Orders>(0);
 
 	public Services() {
 	}
 
-	public Services(String name, Float price, Integer customerServiceId, Set<Orders> orderses) {
+	public Services(String name, Float price, Set<Orders> orderses) {
 		this.name = name;
 		this.price = price;
-		this.customerServiceId = customerServiceId;
 		this.orderses = orderses;
 	}
 
@@ -64,15 +62,6 @@ public class Services  {
 
 	public void setPrice(Float price) {
 		this.price = price;
-	}
-
-	@Column(name = "customer_serviceId")
-	public Integer getCustomerServiceId() {
-		return this.customerServiceId;
-	}
-
-	public void setCustomerServiceId(Integer customerServiceId) {
-		this.customerServiceId = customerServiceId;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "services")

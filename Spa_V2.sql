@@ -21,8 +21,8 @@ IF EXISTS ( SELECT * FROM sysdatabases WHERE name=N'Qlspa')
  Drop Table orders
  
   go
- IF object_ID('admins') is  not null 
- Drop Table admins
+ IF object_ID('users') is  not null 
+ Drop Table users
  IF object_ID('customers') is  not null 
  Drop Table customers
  
@@ -43,25 +43,26 @@ IF EXISTS ( SELECT * FROM sysdatabases WHERE name=N'Qlspa')
  Create Table customers
  (
  Id int IDENTITY(1,1) not null,
-  Username NVARCHAR(10) not null,
- Passwords NVARCHAR(30),
+ Username NVARCHAR(10) not null,
+Passwords NVARCHAR(30),
+roles int default 0 , -- 0 customer  , 3 -mod , 10 admin
  Name NVARCHAR (50)not null,
  Gender bit not null,--1nam 0nu
  Birthday date not null,
- Photo NVARCHAR (max) not null,
+ Photo NVARCHAR (max) ,
  Email NVARCHAR(50) not null,
- customer_serviceId int,
  order_count int,
  custormer_status bit,
   PRIMARY KEY (Id),
  )
+ 
+
  
  Create Table services
  (
  Id int IDENTITY(1,1) not null,
  Name NVARCHAR (50),
  Price FLOAT (20),
- customer_serviceId int,
  PRIMARY KEY (Id))
 
  
@@ -107,14 +108,6 @@ order_status int
 )
  
 
- go
- Create Table admins
- (
-Username NVARCHAR(10) not null,
-Passwords NVARCHAR(30),
-roles int,
-staff_Id int
-PRIMARY KEY (username),
-FOREIGN key (staff_Id) REFERENCES staffs
- )
+
+
  

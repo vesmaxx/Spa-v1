@@ -1,14 +1,16 @@
 package com.vesmax.model;
-// Generated Jun 29, 2019 6:03:20 PM by Hibernate Tools 5.1.7.Final
+// Generated Jul 29, 2019 8:28:23 PM by Hibernate Tools 5.1.7.Final
+
+import static javax.persistence.GenerationType.IDENTITY;
 
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -25,8 +27,8 @@ import javax.persistence.TemporalType;
 public class Orders  {
 
 	private Integer id;
-	private Customers customers;
 	private Services services;
+	private Users users;
 	private Date times;
 	private Integer orderStatus;
 	private Set<StaffsOrder> staffsOrders = new HashSet<StaffsOrder>(0);
@@ -34,10 +36,9 @@ public class Orders  {
 	public Orders() {
 	}
 
-	public Orders(Customers customers, Services services, Date times, Integer orderStatus,
-			Set<StaffsOrder> staffsOrders) {
-		this.customers = customers;
+	public Orders(Services services, Users users, Date times, Integer orderStatus, Set<StaffsOrder> staffsOrders) {
 		this.services = services;
+		this.users = users;
 		this.times = times;
 		this.orderStatus = orderStatus;
 		this.staffsOrders = staffsOrders;
@@ -56,16 +57,6 @@ public class Orders  {
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "customer_Id")
-	public Customers getCustomers() {
-		return this.customers;
-	}
-
-	public void setCustomers(Customers customers) {
-		this.customers = customers;
-	}
-
-	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "services_Id")
 	public Services getServices() {
 		return this.services;
@@ -73,6 +64,16 @@ public class Orders  {
 
 	public void setServices(Services services) {
 		this.services = services;
+	}
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "users_Id")
+	public Users getUsers() {
+		return this.users;
+	}
+
+	public void setUsers(Users users) {
+		this.users = users;
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)

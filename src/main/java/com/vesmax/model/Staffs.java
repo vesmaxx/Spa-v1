@@ -1,5 +1,5 @@
 package com.vesmax.model;
-// Generated Jun 29, 2019 6:03:20 PM by Hibernate Tools 5.1.7.Final
+// Generated Jul 29, 2019 8:28:23 PM by Hibernate Tools 5.1.7.Final
 
 
 import java.util.Date;
@@ -32,7 +32,6 @@ public class Staffs  {
 	private String phone;
 	private int salary;
 	private Integer staffStatus;
-	private Set<Admins> adminses = new HashSet<Admins>(0);
 	private Set<StaffsOrder> staffsOrders = new HashSet<StaffsOrder>(0);
 
 	public Staffs() {
@@ -50,7 +49,7 @@ public class Staffs  {
 	}
 
 	public Staffs(String name, boolean gender, Date birthday, String photo, String email,
-			String phone, int salary, Integer staffStatus, Set<Admins> adminses, Set<StaffsOrder> staffsOrders) {
+			String phone, int salary, Integer staffStatus, Set<StaffsOrder> staffsOrders) {
 		this.name = name;
 		this.gender = gender;
 		this.birthday = birthday;
@@ -59,7 +58,6 @@ public class Staffs  {
 		this.phone = phone;
 		this.salary = salary;
 		this.staffStatus = staffStatus;
-		this.adminses = adminses;
 		this.staffsOrders = staffsOrders;
 	}
 
@@ -146,15 +144,6 @@ public class Staffs  {
 
 	public void setStaffStatus(Integer staffStatus) {
 		this.staffStatus = staffStatus;
-	}
-
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "staffs")
-	public Set<Admins> getAdminses() {
-		return this.adminses;
-	}
-
-	public void setAdminses(Set<Admins> adminses) {
-		this.adminses = adminses;
 	}
 
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "staffs")
