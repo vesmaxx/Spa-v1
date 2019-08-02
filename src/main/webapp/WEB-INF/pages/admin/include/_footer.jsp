@@ -50,7 +50,7 @@
 
 <!-- Bootstrap core JavaScript-->
 <script
-	src="resources/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	src="../resources/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
 
