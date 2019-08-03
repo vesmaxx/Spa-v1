@@ -11,7 +11,7 @@ import com.vesmax.service.UserService;
 import com.vesmax.service.UserServiceimpl;
 
 @Controller
-@RequestMapping(value="admin/")
+@RequestMapping(value="/admin/")
 public class UserController {
 	
 	UserService userService = new UserServiceimpl();
@@ -25,14 +25,14 @@ public class UserController {
 	
 	
 
-	@RequestMapping(value="user-delete/{id}")
+	@RequestMapping(value="/user-delete/{id}")
 	public String Delete(Model model, @PathVariable("id") int User_ID ) {
 		System.out.println("go delete");
 		System.out.println(User_ID + "ID");
-//		model.addAttribute("admin", userService.list());
+		userService.Delete(User_ID);
+		model.addAttribute("admin", userService.list());
 		
-//		System.out.println("admin");
-		return "admin/user/List";
+		return "redirect: /Spa_V1/admin/user-list";
 	}
 
 }

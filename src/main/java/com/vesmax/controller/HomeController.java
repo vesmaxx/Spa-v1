@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
-	@RequestMapping(value="client")
+	@RequestMapping(value="/")
 	public String abc(Model model) {
 		System.out.println("client");
-		return "client/abc";	
+		return "client/homePage";	
 	}
 }	
