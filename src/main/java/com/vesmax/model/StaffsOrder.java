@@ -1,5 +1,5 @@
 package com.vesmax.model;
-// Generated Jul 29, 2019 8:28:23 PM by Hibernate Tools 5.1.7.Final
+// Generated Aug 3, 2019 10:57:36 AM by Hibernate Tools 5.1.7.Final
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,7 +16,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "staffs_order", schema = "dbo", catalog = "Qlspa")
-public class StaffsOrder implements java.io.Serializable {
+public class StaffsOrder{
 
 	private Integer id;
 	private Orders orders;

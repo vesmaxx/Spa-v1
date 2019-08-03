@@ -8,36 +8,36 @@ import com.vesmax.model.Users;
 
 public class UserServiceimpl implements UserService {
 	
-	  UserDao user = new UserDaoimpl();
+	  UserDao userDao = new UserDaoimpl();
 	
 	@Override
 	public List<Users> list() {
 		// TODO Auto-generated method stub
-		return user.list();
+		return userDao.list();
 	}
 
 	@Override
 	public Users findById(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return userDao.findByID(id);
 	}
 
 	@Override
-	public Users Update(Users Users) {
+	public Boolean Update(Users Users) {
 		// TODO Auto-generated method stub
-		return null;
+		return userDao.Create(Users);
 	}
 
 	@Override
-	public Users Create(Users Users) {
+	public Boolean Create(Users Users) {
 		// TODO Auto-generated method stub
-		return null;
+		return userDao.Update(Users);
 	}
 
 	@Override
-	public Users Delete(int id) {
+	public Boolean Delete(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return userDao.Delete(id);
 	}
 	
 	

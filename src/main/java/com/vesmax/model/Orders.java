@@ -1,5 +1,5 @@
 package com.vesmax.model;
-// Generated Jul 29, 2019 8:28:23 PM by Hibernate Tools 5.1.7.Final
+// Generated Aug 3, 2019 10:57:36 AM by Hibernate Tools 5.1.7.Final
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -29,6 +29,7 @@ public class Orders  {
 	private Integer id;
 	private Services services;
 	private Users users;
+	private Integer number;
 	private Date times;
 	private Integer orderStatus;
 	private Set<StaffsOrder> staffsOrders = new HashSet<StaffsOrder>(0);
@@ -36,9 +37,11 @@ public class Orders  {
 	public Orders() {
 	}
 
-	public Orders(Services services, Users users, Date times, Integer orderStatus, Set<StaffsOrder> staffsOrders) {
+	public Orders(Services services, Users users, Integer number, Date times, Integer orderStatus,
+			Set<StaffsOrder> staffsOrders) {
 		this.services = services;
 		this.users = users;
+		this.number = number;
 		this.times = times;
 		this.orderStatus = orderStatus;
 		this.staffsOrders = staffsOrders;
@@ -74,6 +77,15 @@ public class Orders  {
 
 	public void setUsers(Users users) {
 		this.users = users;
+	}
+
+	@Column(name = "number")
+	public Integer getNumber() {
+		return this.number;
+	}
+
+	public void setNumber(Integer number) {
+		this.number = number;
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)

@@ -9,10 +9,10 @@ List<Users> list();
 	
 Users findById(int id);
 	
-Users Update(Users Users);
+Boolean Update(Users Users);
 	
-Users Create(Users Users);
+Boolean Create(Users Users);
 	
-Users Delete(int id);
+Boolean Delete(int id);
 
 }

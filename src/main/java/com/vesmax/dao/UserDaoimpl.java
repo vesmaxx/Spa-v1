@@ -12,6 +12,7 @@ public class UserDaoimpl implements UserDao {
 
 	private final SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Users> list() {
 		Session session = sessionFactory.openSession();
@@ -33,13 +34,13 @@ public class UserDaoimpl implements UserDao {
 	}
 
 	@Override
-	public Users Update(Users user) {
+	public Boolean Update(Users user) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Users Create(Users user) {
+	public Boolean Create(Users user) {
 		// TODO Auto-generated method stub
 		return null;
 	}

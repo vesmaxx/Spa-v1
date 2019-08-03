@@ -35,24 +35,31 @@
 
 					<tbody>
 						<c:forEach items="${admin }" var="item">
+								
 							<tr>
+							 	
 								<td>${item.name }</td>
 								<td>${item.email }</td>
 								<td>${item.birthday }</td>
 								<td>${item.roles }</td>
 								<td style="margin: 90px">
-									<button class="btn btn-primary">
+								
+							
+								<button class="btn btn-primary">
 										<i class="fa fa-edit"></i>
 									</button>
-									 <a data-toggle="modal" data-target="#confirm-delete"
+									
+										<a
+										data-toggle="modal" data-target="#confirm-delete"
 										class="btn btn-danger"
-										
-										href="Delete/${item.id}"	
+										href="user-delete/${item.id }"
 										>
 										<i class="fa fa-trash"></i>
 									</a>  
+								
 									
 									
+									 
 								</td>
 								
 							</tr>
@@ -65,7 +72,7 @@
 </div>
 
 
-	<!-- 		<script>
+<%-- 	 		<script>
 				$('#confirm-delete').on(
 						'show.bs.modal',
 						function(e) {
@@ -76,14 +83,14 @@
 				setTimeout(function() {
 					$('#HidemyDIV').fadeOut('slow');
 				}, 1000);
-			</script> -->
+			</script> 
 
-<%-- <div style="margin: 0 20px;" id="HidemyDIV"
+ <div style="margin: 0 20px;" id="HidemyDIV"
 	class="alert alert-success fade in">
 	<a href="#" class="close" data-dismiss="alert">&times;</a> <strong
 		style="padding-left: 60px;">${msg }</strong>
 
-</div> --%>
+</div> --%> 
 
 
 <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog"
@@ -109,8 +116,8 @@
 			</div>
 
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-				<a style="margin-right: 40%" class="btn btn-danger btn-ok">Delete</a>
+				<button  class="btn btn-default" data-dismiss="modal">Cancel</button>
+				<button style="margin-right: 40%" class="btn btn-danger btn-ok">Delete</button>
 			</div>
 		</div>
 	</div>

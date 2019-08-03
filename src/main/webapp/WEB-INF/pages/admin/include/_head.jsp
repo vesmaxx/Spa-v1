@@ -160,8 +160,8 @@
 				</div></li>
 
 			<!-- Nav Item - Charts -->
-			<li class="nav-item"><a class="nav-link" href="charts.html">
-					<i class="fas fa-fw fa-chart-area"></i> <span>Charts</span>
+			<li class="nav-item"><a class="nav-link" href="user-list">
+					<i class="fas fa-fw fa-chart-area"></i> <span>User</span>
 			</a></li>
 
 			<!-- Nav Item - Tables -->

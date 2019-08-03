@@ -1,5 +1,5 @@
 package com.vesmax.model;
-// Generated Jul 29, 2019 8:28:23 PM by Hibernate Tools 5.1.7.Final
+// Generated Aug 3, 2019 10:57:36 AM by Hibernate Tools 5.1.7.Final
 
 import java.io.Serializable;
 import javax.persistence.Column;

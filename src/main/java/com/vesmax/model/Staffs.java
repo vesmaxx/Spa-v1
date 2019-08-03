@@ -1,15 +1,16 @@
 package com.vesmax.model;
-// Generated Jul 29, 2019 8:28:23 PM by Hibernate Tools 5.1.7.Final
+// Generated Aug 3, 2019 10:57:36 AM by Hibernate Tools 5.1.7.Final
 
+import static javax.persistence.GenerationType.IDENTITY;
 
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;

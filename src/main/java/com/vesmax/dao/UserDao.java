@@ -10,9 +10,9 @@ public interface UserDao {
 	
 	Users findByID(int id);
 	
-	Users Update(Users user);
+	Boolean Update(Users user);
 	
-	Users Create(Users user);
+	Boolean Create(Users user);
 	
 	Boolean Delete(int id);
 

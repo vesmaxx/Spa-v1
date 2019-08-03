@@ -43,16 +43,14 @@ IF EXISTS ( SELECT * FROM sysdatabases WHERE name=N'Qlspa')
  Create Table users
  (
  Id int IDENTITY(1,1) not null,
- Username NVARCHAR(10) not null,
+ Email NVARCHAR(50) ,
 Passwords NVARCHAR(30),
 roles int default 0 , -- 0 customer  , 3 -mod , 10 admin
- Name NVARCHAR (50)not null,
- Gender bit not null,--1nam 0nu
- Birthday date not null,
+ Name NVARCHAR (50),
+ Gender bit default 0,--1nam 0nu
+ Birthday NVARCHAR(15) ,
  Photo NVARCHAR (max) ,
- Email NVARCHAR(50) not null,
- order_count int,
- custormer_status bit,
+ custormer_status bit default 0,
   PRIMARY KEY (Id),
  )
  
@@ -86,6 +84,7 @@ roles int default 0 , -- 0 customer  , 3 -mod , 10 admin
  Create Table orders
  (
 Id int IDENTITY(1,1) not null,
+number int default 1,
 times datetime,
 users_Id int,
 services_Id int,
@@ -108,6 +107,7 @@ order_status int
 )
  
 
+	INSERT INTO users VALUES(NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)
 
 
  
