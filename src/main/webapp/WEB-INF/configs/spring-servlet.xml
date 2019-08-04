@@ -27,8 +27,8 @@
 		</property>
 	</bean>
 
-	<!-- <bean id="sessionFactory"
-		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+	 <bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="hibernateProperties">
 			<props>
@@ -38,7 +38,7 @@
 		</property>
 	</bean>	
 
-	<bean name="dataSource"
+	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName"
 			value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
@@ -46,7 +46,7 @@
 			value="jdbc:sqlserver://localhost:1433;databaseName=Qlspa" />
 		<property name="username" value="sa" />
 		<property name="password" value="123" />
-	</bean> -->
+	</bean> 
 
 	<context:component-scan
 		base-package="com.vesmax.controller" />

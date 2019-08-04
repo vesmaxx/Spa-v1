@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import com.vesmax.model.Users;
 import com.vesmax.service.UserService;
 import com.vesmax.service.UserServiceimpl;
@@ -17,7 +19,6 @@ public class AuthController {
 
 	UserService userService = new UserServiceimpl();
 
-	// @RequestMapping(value="register" , method = RequestMethod.GET)
 	@GetMapping(value = "register")
 	public String Register(Model model) {
 		System.out.println("go register");
@@ -38,6 +39,34 @@ public class AuthController {
 	@GetMapping(value = "login")
 	public String login() {
 		return "client/login";
+	}
+	
+	@GetMapping(value = "login-error")
+	public String lOut(HttpSession session ) {
+		session.setAttribute("Msg", "Invalid username or password");
+		return "redirect: login";
+	}
+	
+
+	/*@GetMapping(value="SignOut" )
+	public String SignOut(HttpSession session) {
+		session.removeAttribute("Msg");
+		return "redirect: login";
+	}*/
+
+	
+//	@PostMapping(value= "login-processing")
+//	public String loginProcessing(Model model , @RequestParam("FieldEmail") String Email , @RequestParam("FieldPassword") String Password ) {
+//		System.out.println("FieldEmail--" + Email);
+//		System.out.println("FieldPassword--" + Password);
+//		return "client/login";
+//	}
+	
+	
+	
+	@GetMapping(value = "404")
+	public String Error() {
+		return "client/404";
 	}
 
 }
