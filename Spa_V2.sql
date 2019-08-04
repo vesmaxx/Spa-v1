@@ -32,6 +32,10 @@ IF EXISTS ( SELECT * FROM sysdatabases WHERE name=N'Qlspa')
  IF object_ID('services') is  not null 
  Drop Table services
  go
+ 
+ IF object_ID('images') is  not null 
+ Drop Table images
+ go
 
   
  
@@ -54,6 +58,17 @@ roles int default 0 , -- 0 customer  , 3 -mod , 10 admin
   PRIMARY KEY (Id),
  )
  
+ 
+ Create Table images
+ (
+ Id int IDENTITY(1,1) not null,
+ Photo NVARCHAR (max) ,
+  PRIMARY KEY (Id),
+ )
+ 
+ 
+ 
+ 
 
  
  Create Table services
@@ -61,6 +76,7 @@ roles int default 0 , -- 0 customer  , 3 -mod , 10 admin
  Id int IDENTITY(1,1) not null,
  Name NVARCHAR (50),
  Price FLOAT (20),
+ Images	 NVARCHAR (max),
  PRIMARY KEY (Id))
 
  
@@ -107,7 +123,10 @@ order_status int
 )
  
 
-	INSERT INTO users (Email , Passwords) VALUES('Admin','123')
+	INSERT INTO users (Name,Email , Passwords,roles) VALUES('Pham Hoai Nam','admin@gmail.com','123',10)
+	INSERT INTO users (Name,Email , Passwords,roles) VALUES('Nguyn Ngoc Bao','user@gmail.com','123',0)
+
 
 
  
+select * from users

@@ -8,4 +8,5 @@
   <table-filter match-catalog="Qlspa" match-schema="dbo" match-name="services"/>
   <table-filter match-catalog="Qlspa" match-schema="dbo" match-name="staffs"/>
   <table-filter match-catalog="Qlspa" match-schema="dbo" match-name="staffs_order"/>
+   <table-filter match-catalog="Qlspa" match-schema="dbo" match-name="images"/>
 </hibernate-reverse-engineering>

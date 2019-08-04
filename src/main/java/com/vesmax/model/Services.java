@@ -1,5 +1,6 @@
 package com.vesmax.model;
-// Generated Aug 3, 2019 10:57:36 AM by Hibernate Tools 5.1.7.Final
+// Generated Aug 4, 2019 6:35:03 PM by Hibernate Tools 5.1.7.Final
+
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -19,20 +20,21 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "services", schema = "dbo", catalog = "Qlspa")
-public class Services  {
+public class Services {
 
 	private Integer id;
 	private String name;
 	private Float price;
+	private String images;
 	private Set<Orders> orderses = new HashSet<Orders>(0);
 
 	public Services() {
 	}
 
-	public Services(String name, Float price, Set<Orders> orderses) {
+	public Services(String name, Float price, String images) {
 		this.name = name;
 		this.price = price;
-		this.orderses = orderses;
+		this.images = images;
 	}
 
 	@Id
@@ -65,6 +67,14 @@ public class Services  {
 		this.price = price;
 	}
 
+	@Column(name = "Images")
+	public String getImages() {
+		return this.images;
+	}
+
+	public void setImages(String images) {
+		this.images = images;
+	}
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "services")
 	public Set<Orders> getOrderses() {
 		return this.orderses;
