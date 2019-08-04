@@ -15,5 +15,7 @@ public interface UserDao {
 	Boolean Create(Users user);
 	
 	Boolean Delete(int id);
+	
+	boolean checkLogin(String username, String password);
 
 }

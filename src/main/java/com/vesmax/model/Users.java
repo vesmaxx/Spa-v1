@@ -47,6 +47,14 @@ public class Users  {
 		this.custormerStatus = custormerStatus;
 		this.orderses = orderses;
 	}
+	
+	public Users(String email, String passwords, String name, Integer roles,Boolean custormerStatus) {
+		this.email = email;
+		this.passwords = passwords;
+		this.name = name;
+		this.roles = roles;
+		this.custormerStatus = custormerStatus;
+	}
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)

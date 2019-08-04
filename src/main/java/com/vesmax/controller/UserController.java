@@ -31,7 +31,6 @@ public class UserController {
 		System.out.println(User_ID + "ID");
 		userService.Delete(User_ID);
 		model.addAttribute("admin", userService.list());
-		
 		return "redirect: /Spa_V1/admin/user-list";
 	}
 

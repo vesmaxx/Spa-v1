@@ -60,8 +60,8 @@
                 </div>
                 <div class="col-lg-6 col-md-6 text-center text-md-right header-top-right">
                     <ul>
-                        <li><a href="#"><i class="fas fa-envelope"></i>email@companyname.com</a></li>
-                        <li><a href="#"><i class="fas fa-phone"></i>+12 345 678 910</a></li>
+                        <li><a href="register"><i class="fas fa-registered"></i>Register</a></li>
+                        <li><a href="login"><i class="fas fa-user"></i>Login</a></li>
                     </ul>       
                 </div>
             </div>

@@ -25,19 +25,25 @@ public class UserServiceimpl implements UserService {
 	@Override
 	public Boolean Update(Users Users) {
 		// TODO Auto-generated method stub
-		return userDao.Create(Users);
+		return userDao.Update(Users);
 	}
 
 	@Override
 	public Boolean Create(Users Users) {
 		// TODO Auto-generated method stub
-		return userDao.Update(Users);
+		return userDao.Create(Users);
 	}
 
 	@Override
 	public Boolean Delete(int id) {
 		// TODO Auto-generated method stub
 		return userDao.Delete(id);
+	}
+
+	@Override
+	public Boolean checkLogin(String username, String password) {
+		// TODO Auto-generated method stub
+		return userDao.checkLogin(username, password);
 	}
 	
 	

@@ -15,4 +15,7 @@ Boolean Create(Users Users);
 	
 Boolean Delete(int id);
 
+Boolean checkLogin(String username, String password);
+
+
 }

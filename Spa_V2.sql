@@ -107,7 +107,7 @@ order_status int
 )
  
 
-	INSERT INTO users VALUES(NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)
+	INSERT INTO users (Email , Passwords) VALUES('Admin','123')
 
 
  
