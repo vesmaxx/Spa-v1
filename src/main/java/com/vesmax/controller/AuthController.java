@@ -41,6 +41,12 @@ public class AuthController {
 		return "client/login";
 	}
 
+	/*
+	 * @GetMapping(value = "/login-processing") public String loginProcessing(Model
+	 * model, @RequestParam("FieldEmail") String email) { System.out.println(email);
+	 * return "client/login"; }
+	 */
+
 	@GetMapping(value = "login-error")
 	public String lOut(HttpSession session) {
 		session.setAttribute("Msg", "Invalid username or password");
