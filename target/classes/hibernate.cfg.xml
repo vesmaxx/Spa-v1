@@ -15,5 +15,6 @@
 		<mapping class="com.vesmax.model.Orders" />
 		<mapping class="com.vesmax.model.Users" />
 		<mapping class="com.vesmax.model.Services" />
+			<mapping class="com.vesmax.model.Images" />
 	</session-factory>
 </hibernate-configuration>
