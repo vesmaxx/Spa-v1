@@ -30,7 +30,7 @@ public class UserDaoimpl implements UserDao {
 			System.out.println(e);
 			return null;
 		}
-		
+
 	}
 
 	@Override
@@ -75,21 +75,6 @@ public class UserDaoimpl implements UserDao {
 			return false;
 		} finally {
 			session.close();
-		}
-	}
-
-	@SuppressWarnings({ "unchecked", "deprecation", "rawtypes" })
-	@Override
-	public boolean checkLogin(String username, String password) {
-		Session session = sessionFactory.getCurrentSession();
-		List<Users> list = null;
-		String sql = "FROM Users WHERE Username='"+ username+ "' AND Password = '" + password +"'";
-		Query query = session.createQuery(sql);
-		list = query.list();
-		if(list.size()>0) {
-			return true;
-		} else {
-			return false;
 		}
 	}
 

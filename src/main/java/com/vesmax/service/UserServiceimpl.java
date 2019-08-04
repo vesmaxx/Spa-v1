@@ -7,9 +7,9 @@ import com.vesmax.dao.UserDaoimpl;
 import com.vesmax.model.Users;
 
 public class UserServiceimpl implements UserService {
-	
-	  UserDao userDao = new UserDaoimpl();
-	
+
+	UserDao userDao = new UserDaoimpl();
+
 	@Override
 	public List<Users> list() {
 		// TODO Auto-generated method stub
@@ -40,15 +40,4 @@ public class UserServiceimpl implements UserService {
 		return userDao.Delete(id);
 	}
 
-	@Override
-	public Boolean checkLogin(String username, String password) {
-		// TODO Auto-generated method stub
-		return userDao.checkLogin(username, password);
-	}
-	
-	
-
-	
-	
-	
 }

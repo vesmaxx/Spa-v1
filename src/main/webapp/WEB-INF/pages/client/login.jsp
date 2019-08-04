@@ -35,17 +35,15 @@
 
 <body class="bg-gradient-primary">
 	<script type="text/javascript">
-$(document).ready(function () {
-    timer = setTimeout(function () {
-        $('#Msg').addClass('hide');
-    }, 5000);
-  /*   
-    $window.location.reload();
-    sessionStorage.clear(); */
-});
-
-
-</script>
+		$(document).ready(function() {
+			timer = setTimeout(function() {
+				$('#Msg').addClass('hide');
+			}, 5000);
+			/*   
+			  $window.location.reload();
+			  sessionStorage.clear(); */
+		});
+	</script>
 
 	<div class="container">
 
@@ -69,12 +67,12 @@ $(document).ready(function () {
 											<input type="email" class="form-control form-control-user"
 												name="FieldEmail" id="exampleInputEmail"
 												aria-describedby="emailHelp"
-												placeholder="Enter Email Address...">
+												placeholder="Enter Email Address..." required>
 										</div>
 										<div class="form-group">
 											<input type="password" class="form-control form-control-user"
 												name="FieldPassword" id="exampleInputPassword"
-												placeholder="Password">
+												placeholder="Password" required>
 										</div>
 
 										<div id="Msg" class="form-group">
