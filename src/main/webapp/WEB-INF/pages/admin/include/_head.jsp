@@ -368,7 +368,7 @@
 								Log
 							</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="/login"> <i
+							<a class="dropdown-item" href="${pageContext.request.contextPath }/SignOut"> <i
 								class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
 								Logout
 							</a>

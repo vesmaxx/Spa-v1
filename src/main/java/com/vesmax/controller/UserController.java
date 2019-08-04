@@ -24,7 +24,7 @@ public class UserController {
 	}
 	
 	
-
+	
 	@RequestMapping(value="/user-delete/{id}")
 	public String Delete(Model model, @PathVariable("id") int User_ID ) {
 		System.out.println("go delete");
