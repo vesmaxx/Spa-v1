@@ -22,7 +22,7 @@ public class AuthController {
 	@GetMapping(value = "register")
 	public String Register(Model model) {
 		System.out.println("go register");
-		return "client/register";
+		return "public/register";
 	}
 
 	@PostMapping(value = "registered")
@@ -38,13 +38,13 @@ public class AuthController {
 
 	@GetMapping(value = "login")
 	public String login() {
-		return "client/login";
+		return "public/login";
 	}
 
 	/*
 	 * @GetMapping(value = "/login-processing") public String loginProcessing(Model
 	 * model, @RequestParam("FieldEmail") String email) { System.out.println(email);
-	 * return "client/login"; }
+	 * return "public/login"; }
 	 */
 
 	@GetMapping(value = "login-error")
@@ -55,7 +55,7 @@ public class AuthController {
 
 	@GetMapping(value = "404")
 	public String Error() {
-		return "client/404";
+		return "public/404";
 	}
 
 }

@@ -31,7 +31,7 @@
 	<!-- Filter login with role -->
 
 	<beans:bean id="authSuccessHandler"
-		class="com.vesmax.security.AuthSuccessHandler " />
+		class="com.vesmax.security.AuthFilterRoleHandler " />
 
 	<!-- Connect Database support login -->
 
