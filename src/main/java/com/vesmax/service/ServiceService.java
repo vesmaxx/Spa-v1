@@ -9,10 +9,10 @@ public interface ServiceService {
 
 	Services findById(int id);
 
-	Services Update(Services service);
+	boolean Update(Services service);
 
-	Services Create(Services service);
+	boolean Create(Services service);
 
-	Services Delete(int id);
+	boolean Delete(Services service);
 
 }
