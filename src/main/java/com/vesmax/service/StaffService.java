@@ -9,9 +9,9 @@ public interface StaffService {
 
 	Staffs findById(int id);
 
-	Staffs Update(Staffs Staffs);
+	boolean Update(Staffs Staffs);
 
-	Staffs Create(Staffs Staffs);
+	boolean Create(Staffs Staffs);
 
-	Staffs Delete(int id);
+	boolean Delete(Staffs Staffs);
 }

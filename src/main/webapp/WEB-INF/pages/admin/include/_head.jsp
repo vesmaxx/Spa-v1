@@ -163,6 +163,10 @@
 			<li class="nav-item"><a class="nav-link" href="user-list">
 					<i class="fas fa-fw fa-chart-area"></i> <span>User</span>
 			</a></li>
+			
+			<li class="nav-item"><a class="nav-link" href="service">
+					<i class="fas fa-fw fa-chart-area"></i> <span>Service</span>
+			</a></li>
 
 			<!-- Nav Item - Tables -->
 			<li class="nav-item active"><a class="nav-link"
