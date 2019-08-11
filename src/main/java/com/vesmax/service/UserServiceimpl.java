@@ -40,4 +40,10 @@ public class UserServiceimpl implements UserService {
 		return userDao.Delete(id);
 	}
 
+	@Override
+	public List<Users> findByEmail(String email) {
+		// TODO Auto-generated method stub
+		return userDao.findByEmail(email);
+	}
+
 }

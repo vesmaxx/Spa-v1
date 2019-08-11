@@ -15,5 +15,7 @@ public interface UserDao {
 	Boolean Create(Users user);
 
 	Boolean Delete(int id);
+	
+	List<Users> findByEmail(String email);
 
 }

@@ -25,7 +25,7 @@
 	rel="stylesheet">
 
 <!-- Custom styles for this template-->
-<link href="resources/assets/css/sb-admin-2.min.css" rel="stylesheet">
+<link href="resources/assets/css/sb-admin-2.css" rel="stylesheet">
 
 </head>
 
@@ -41,14 +41,16 @@ $(document).ready(function() {
 	    e.preventDefault();
 	    setTimeout(function () {
 	        form.submit();
-	    }, 5000); // in milliseconds
+	    }, 3000); // in milliseconds
 
-	    $("<p>Delay...$}</p>").appendTo('.wait');
+	    /*  $('.preloader').appendTo('body');  */
+	    $('.wait').html('<p>Load...</p>')
 	}); 
 	 
 	
 	});
 </script>
+
 
 	<div class="container">
 

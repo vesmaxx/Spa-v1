@@ -32,11 +32,26 @@ public class UserDaoimpl implements UserDao {
 		}
 
 	}
+	
+	
 
 	@Override
 	public Boolean Update(Users user) {
-		// TODO Auto-generated method stub
-		return null;
+		Session session = sessionFactory.openSession();
+		try {
+			session.getTransaction().begin();
+			session.update(user);
+			session.getTransaction().commit();
+			return true;
+		} catch (Exception e) {
+			System.out.println(e);
+			if (session.getTransaction() != null) {
+				session.getTransaction().rollback();
+			}
+			return false;
+		} finally {
+			session.close();
+		}
 	}
 
 	@Override
@@ -76,6 +91,19 @@ public class UserDaoimpl implements UserDao {
 		} finally {
 			session.close();
 		}
+	}
+
+	@Override
+	public List<Users> findByEmail(String email) {
+		try {
+			Session session = sessionFactory.openSession();
+			List<Users> user = session.createQuery("FROM Users WHERE Email ='" +email +"'").list();
+			return user;
+		} catch (Exception e) {
+			System.out.println(e);
+			return null;
+		}
+		
 	}
 
 }

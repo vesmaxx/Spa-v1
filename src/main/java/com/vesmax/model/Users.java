@@ -55,6 +55,23 @@ public class Users  {
 		this.roles = roles;
 		this.custormerStatus = custormerStatus;
 	}
+	
+	
+
+
+
+	public Users(Integer id, String email, String passwords, Integer roles, String name, Boolean gender,
+			String birthday, Boolean custormerStatus) {
+		super();
+		this.id = id;
+		this.email = email;
+		this.passwords = passwords;
+		this.roles = roles;
+		this.name = name;
+		this.gender = gender;
+		this.birthday = birthday;
+		this.custormerStatus = custormerStatus;
+	}
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)

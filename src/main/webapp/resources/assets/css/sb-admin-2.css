@@ -11641,19 +11641,19 @@ a:focus {
 }
 
 .bg-login-image {
-  background: url("https://source.unsplash.com/K4mSJ7kc0As/600x800");
+  background: url("https://image-assets.access.myfave.gdn/attachments/ee83265163b5a1a6d4c60b5b3b907398662c8d29/store/fill/800/500/f906f18ac083bdf0cb76d02f2d82df12893b0b0cdbf54cf80efe4767dc36/activity_image.jpg");
   background-position: center;
   background-size: cover;
 }
 
 .bg-register-image {
-  background: url("https://source.unsplash.com/Mv9hjnEUHR4/600x800");
+  background: url("https://d2ile4x3f22snf.cloudfront.net/wp-content/uploads/sites/168/2017/07/21024811/spa-and-beauty-20.jpg");
   background-position: center;
   background-size: cover;
 }
 
 .bg-password-image {
-  background: url("https://source.unsplash.com/oWTW-jNGl9I/600x800");
+/*   background: url("https://source.unsplash.com/oWTW-jNGl9I/600x800"); */
   background-position: center;
   background-size: cover;
 }

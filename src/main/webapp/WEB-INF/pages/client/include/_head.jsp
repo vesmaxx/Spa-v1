@@ -39,12 +39,13 @@
 			
 			
 			var check = localStorage.getItem('Email')
-			console.log(check,'ditme cau')
 			if(check==null||check==''||check=='anonymousUser'){
 				$('#login').show();
 				$('#logout').hide()
+				$('#profile').hide()
 			}else {
 				$('#login').hide()
+				$('#profile').show();
 			}
 			
 
@@ -87,7 +88,7 @@
 				</ul>
 
 			</div>
-			
+
 			<div id="login"
 				class="col-lg-6 col-md-6 text-center text-md-right header-top-right">
 				<ul>
@@ -95,17 +96,18 @@
 					<li><a href="login"><i class="fas fa-user"></i>Login</a></li>
 				</ul>
 			</div>
-			
+
 			<div id="logout"
 				class="col-lg-6 col-md-6 text-center text-md-right header-top-right">
 				<ul>
 					<li><a id="clear"
-						href="${pageContext.request.contextPath }/SignOut"><i
-							class="fas fa-user"></i>SignOut</a></li>
+						href="${pageContext.request.contextPath }/SignOut"> <i
+							class="fas fa-sign-out-alt"></i>&nbsp;SignOut
+					</a></li>
 				</ul>
 			</div>
-			
-			
+
+
 		</div>
 	</div>
 	</section>
@@ -168,10 +170,40 @@
 
 	<!-- End: Sidenav
     ============================= -->
+    
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div style="top: 25%;" class="modal-dialog">
+			<div style="border-radius: 10px" class="modal-content">
+
+				<div
+					style="padding: 10px 40px 10px 20px; background-color: #EC5598; border-top-left-radius: 10px; border-top-right-radius: 10px;"
+					class="modal-header">
+
+					<h2
+						style="font-size: 28px; color: #fff; margin-left: 30%; text-align: center;"
+						class="modal-title" id="myModalLabel">Profile-Detail</h2>
+				</div>
+				
+				<div class="modal-body">
+ 						<input type="text" class="form-control form-control-user" name="FieldName" placeholder="Enter your name">
+				</div>
+
+				<div class="modal-footer">
+					<button type="reset" class="btn btn-basic" data-dismiss="modal">Cancel</button>
+					<a style="margin-right: 40%" class="btn btn-primary btn-ok">Save</a>
+				</div>
+			</div>
+		</div>
+	</div>
+    
+    
+    
+    
 
 	<!-- Start: Navigation
     ============================= -->
-	<section class="navbar-wrapper">
+<section class="navbar-wrapper">
 	<div class="navbar-area sticky-nav">
 		<div class="container">
 			<div class="row">
@@ -185,7 +217,8 @@
 					<nav class="main-menu">
 					<ul>
 						<li class="active"><a href="index.html">Home</a></li>
-						<li><a href="services.html">Services</a></li>
+						<li><a href="services.html">Service</a></li>
+						
 						<li class="c-dropdowns"><a href="">Portfolio</a>
 							<ul class="cr-dropdown-menu">
 								<li><a href="portfolio-2-column.html">Portfolio 2
@@ -217,17 +250,7 @@
 
 						<li><a href="gallery.html">Gallery</a></li>
 						<li><a href="contact-us.html">Contact</a></li>
-						<li class="search-button">
-							<div id="sb-search" class="sb-search ">
-								<form>
-									<input class="sb-search-input " onkeyup="buttonUp();"
-										placeholder="Search" type="search" value="" name="search"
-										id="search"> <input class="sb-search-submit"
-										type="submit" value=""> <span class="sb-icon-search"><i
-										class="ei ei-search"></i></span>
-								</form>
-							</div>
-						</li>
+						<li><a href="profile" id="profile" >Profile</a></li>
 						<li class="cart-icon">
 							<div id="cd-cart-trigge" class="cart-icon-wrapper cart--open">
 								<i class="ei ei-icon_bag_alt"></i> <span class="cart-count">2</span>
@@ -258,7 +281,8 @@
 				</div>
 			</div>
 		</div>
-		<!-- Start Mobile Menu -->
+
+
 		<div class="mobile-menu-area d-lg-none">
 			<div class="container">
 				<div class="row">
@@ -266,8 +290,8 @@
 						<div class="mobile-menu">
 							<nav class="mobile-menu-active">
 							<ul>
-								<li class="active"><a href="index.html">Home</a></li>
-								<li><a href="services.html">Services</a></li>
+								<li class="active"><a href="#">Home</a></li>
+								<li><a href="#">Profile</a></li>
 								<li class="c-dropdowns"><a href="">Portfolio</a>
 									<ul class="cr-dropdown-menu">
 										<li><a href="portfolio-2-column.html">Portfolio 2
@@ -307,7 +331,7 @@
 				</div>
 			</div>
 		</div>
-		<!-- End Mobile Menu -->
+	
 	</div>
 	</section>
 	<!-- End: Navigation
