@@ -10,6 +10,7 @@
 		<property name="hibernate.connection.username">sa</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
 		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.hbm2ddl.auto">update</property>
 		<mapping class="com.vesmax.model.Staffs" />
 		<mapping class="com.vesmax.model.StaffsOrder" />
 		<mapping class="com.vesmax.model.Orders" />

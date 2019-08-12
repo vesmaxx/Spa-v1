@@ -18,13 +18,24 @@ public class Images  {
 
 	private Integer id;
 	private String photo;
+	private String title;
+	private String content;
+	private String description;
 
 	public Images() {
 	}
 
-	public Images(String photo) {
+	
+
+	public Images(String photo, String title, String content, String description) {
+		super();
 		this.photo = photo;
+		this.title = title;
+		this.content = content;
+		this.description = description;
 	}
+
+
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
@@ -36,6 +47,32 @@ public class Images  {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	
+	
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	@Column(name = "Photo")

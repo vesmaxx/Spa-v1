@@ -216,7 +216,7 @@
 				<div class="col-lg-10 col-md-10 d-none d-lg-block text-right">
 					<nav class="main-menu">
 					<ul>
-						<li class="active"><a href="index.html">Home</a></li>
+						<li class="active"><a href="#">Home</a></li>
 						<li><a href="services.html">Service</a></li>
 						
 						<li class="c-dropdowns"><a href="">Portfolio</a>
