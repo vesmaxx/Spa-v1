@@ -57,8 +57,8 @@
 
 
 	<!-- Page Heading -->
-	<a class="btn btn-primary" href="service-add">
-										Thêm dịch vụ
+	<a class="btn btn-primary" href="staffs-add">
+										Thêm nhân viên
 									</a>
 
 
@@ -71,29 +71,27 @@
 					<thead>
 						<tr>
 							<th>Name</th>
+							<th>Gender</th>
+							<th>Photo</th>
 							<th>Email</th>
-							<th>Image</th>
 							<th>Action</th>
-
-
 						</tr>
 					</thead>
 
 					<tbody>
-						<c:forEach items="${service }" var="item">
-
+						<c:forEach items="${staffs}" var="item">
 							<tr>
-
 								<td>${item.name }</td>
-								<td>${item.price }</td>
-								<td><img alt="Image" width="150px" height="150px" src="${pageContext.request.contextPath}/resources/assets/img/${item.images}"></td>
+								<td>${item.gender ? 'Nam' : 'Nữ'}</td>
+								<td><img alt="Image" width="150px" height="150px" src="${pageContext.request.contextPath}/resources/assets/img/${item.photo}"></td>
+								<td>${item.email}</td>
 								<td>
-									<a class="btn btn-primary" href="service-update/${item.id }">
+									<a class="btn btn-primary" href="staffs-update/${item.id }">
 										<i class="fa fa-edit"></i>
 									</a>
 									<button
 										class="tabledit-delete-button btn btn-danger waves-effect waves-light"
-										data-href="service-delete/${item.id }" data-toggle="modal"
+										data-href="staffs-delete/${item.id }" data-toggle="modal"
 										data-target="#confirm-delete">
 										<i class="fa fa-trash"></i>
 									</button>
