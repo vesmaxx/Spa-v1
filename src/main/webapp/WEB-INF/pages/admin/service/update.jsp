@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -55,56 +56,38 @@
 		}, 1000);
 	</script>
 
-
-	<!-- Page Heading -->
-	<a class="btn btn-primary" href="service-add">
-										Thêm dịch vụ
-									</a>
-
-
 	<!-- DataTales Example -->
 	<div class="card shadow mb-4">
-		<div class="card-body">
-			<div class="table-responsive">
-				<table id="example" class="table table-striped table-bordered"
-					style="width: 100%">
-					<thead>
-						<tr>
-							<th>Name</th>
-							<th>Email</th>
-							<th>Image</th>
-							<th>Action</th>
 
-
-						</tr>
-					</thead>
-
-					<tbody>
-						<c:forEach items="${service }" var="item">
-
-							<tr>
-
-								<td>${item.name }</td>
-								<td>${item.price }</td>
-								<td><img alt="Image" width="150px" height="150px" src="${pageContext.request.contextPath}/resources/assets/img/${item.images}"></td>
-								<td>
-									<a class="btn btn-primary" href="service-update/${item.id }">
-										<i class="fa fa-edit"></i>
-									</a>
-									<button
-										class="tabledit-delete-button btn btn-danger waves-effect waves-light"
-										data-href="service-delete/${item.id }" data-toggle="modal"
-										data-target="#confirm-delete">
-										<i class="fa fa-trash"></i>
-									</button>
-								</td>
-
-							</tr>
-						</c:forEach>
-					</tbody>
-				</table>
-			</div>
-		</div>
+  	<div class="container">
+  <h2>Sửa dịch vụ</h2>
+  <form class="form-horizontal" action="${pageContext.request.contextPath }/admin/service-update2" method="POST" enctype="multipart/form-data">
+  <input  type="hidden" class="form-control" id="" value="${service.id}" placeholder="Nhập tên dịch vụ" name="id">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="email">Tên dịch vụ:</label>
+      <div class="col-sm-10">
+        <input required type="text" class="form-control" value="${service.name }" id="" placeholder="Nhập tên dịch vụ" name="name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Giá:</label>
+      <div class="col-sm-10">          
+        <input required type="number" class="form-control" value="${service.price }" id="" placeholder="Nhập giá dịch vụ" name="price">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Ảnh:</label>
+      <div class="col-sm-10">          
+        <input type="file" required  id="photo" accept="image/gif, image/jpeg, image/png" name="photo2">
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Xác nhận</button>
+      </div>
+    </div>
+  </form>
+</div>
 	</div>
 </div>
 <jsp:include page="../include/_footer.jsp"></jsp:include>

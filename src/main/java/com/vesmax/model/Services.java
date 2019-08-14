@@ -37,6 +37,13 @@ public class Services {
 		this.images = images;
 	}
 
+	public Services(Integer id, String name, Float price, String images) {
+		this.id = id;
+		this.name = name;
+		this.price = price;
+		this.images = images;
+	}
+
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
 

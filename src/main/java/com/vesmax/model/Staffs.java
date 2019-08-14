@@ -3,7 +3,7 @@ package com.vesmax.model;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -40,6 +40,19 @@ public class Staffs  {
 
 	public Staffs(String name, boolean gender, Date birthday, String photo, String email,
 			String phone, int salary) {
+		this.name = name;
+		this.gender = gender;
+		this.birthday = birthday;
+		this.photo = photo;
+		this.email = email;
+		this.phone = phone;
+		this.salary = salary;
+	}
+
+	public Staffs(Integer id, String name, boolean gender, Date birthday, String photo, String email, String phone,
+			int salary) {
+		super();
+		this.id = id;
 		this.name = name;
 		this.gender = gender;
 		this.birthday = birthday;
@@ -92,7 +105,7 @@ public class Staffs  {
 		this.gender = gender;
 	}
 
-	@Temporal(TemporalType.DATE)
+
 	@Column(name = "Birthday", nullable = false, length = 10)
 	public Date getBirthday() {
 		return this.birthday;

@@ -17,7 +17,7 @@ public class StaffServiceimpl implements StaffService {
 	public List<Staffs> list() {
 		Session session = sessionFactory.openSession();
 		session.getTransaction().begin();
-		List<Staffs> list = session.createQuery("From Services").list();
+		List<Staffs> list = session.createQuery("From Staffs").list();
 		session.getTransaction().commit();
 		session.close();
 		return list;

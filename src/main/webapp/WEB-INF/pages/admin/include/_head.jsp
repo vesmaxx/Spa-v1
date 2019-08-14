@@ -41,10 +41,9 @@
 	$(document).ready(function() {
 		$('#example').DataTable({
 			dom : 'Bfrtip',
-			buttons : [ 'copyHtml5', 'excelHtml5', 'csvHtml5', 'pdfHtml5'  ]
+			buttons : [ 'copyHtml5', 'excelHtml5', 'csvHtml5', 'pdfHtml5' ]
 		});
 	});
-	
 </script>
 
 
@@ -160,14 +159,16 @@
 				</div></li>
 
 			<!-- Nav Item - Charts -->
-			<li class="nav-item"><a class="nav-link" href="user-list">
-					<i class="fas fa-fw fa-chart-area"></i> <span>User</span>
-			</a></li>
-			
-			<li class="nav-item"><a class="nav-link" href="service">
-					<i class="fas fa-fw fa-chart-area"></i> <span>Service</span>
+			<li class="nav-item"><a class="nav-link" href="user-list"> <i
+					class="fas fa-fw fa-chart-area"></i> <span>User</span>
 			</a></li>
 
+			<li class="nav-item"><a class="nav-link" href="service"> <i
+					class="fas fa-fw fa-chart-area"></i> <span>Service</span>
+			</a></li>
+			<li class="nav-item"><a class="nav-link" href="staffs"> <i
+					class="fas fa-fw fa-chart-area"></i> <span>Staff</span>
+			</a></li>
 			<!-- Nav Item - Tables -->
 			<li class="nav-item active"><a class="nav-link"
 				href="tables.html"> <i class="fas fa-fw fa-table"></i> <span>Tables</span></a>
@@ -372,7 +373,8 @@
 								Log
 							</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="${pageContext.request.contextPath }/SignOut"> <i
+							<a class="dropdown-item"
+								href="${pageContext.request.contextPath }/SignOut"> <i
 								class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
 								Logout
 							</a>

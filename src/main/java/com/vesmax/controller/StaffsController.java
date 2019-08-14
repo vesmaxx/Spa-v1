@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.sql.Date;
 import java.util.Enumeration;
 import java.util.EventListener;
 import java.util.Map;
@@ -27,21 +28,21 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.vesmax.model.Services;
-import com.vesmax.service.ServiceService;
-import com.vesmax.service.ServiceServiceimpl;
+import com.vesmax.model.Staffs;
+import com.vesmax.service.StaffService;
+import com.vesmax.service.StaffServiceimpl;
 
 @Controller
 @RequestMapping(value = "/admin/")
-public class ServiceController {
-	ServiceService serviceService = new ServiceServiceimpl();
-	ServletContext context = new ServletContext() {
+public class StaffsController {
+	StaffService staffService = new StaffServiceimpl();
+ServletContext context = new ServletContext() {
 		
 		@Override
 		public void setSessionTrackingModes(Set<SessionTrackingMode> sessionTrackingModes) {
@@ -351,57 +352,61 @@ public class ServiceController {
 		}
 	};
 
-	@GetMapping("service")
+	@GetMapping("staffs")
 	public String List(Model model) {
-		model.addAttribute("service", serviceService.list());
-		return "admin/service/List";
+		model.addAttribute("staffs", staffService.list());
+		return "admin/staffs/List";
 	}
 
-	@GetMapping("service-add")
+	@GetMapping("staffs-add")
 	public String addService(Model model) {
-		return "admin/service/addService";
+		return "admin/staffs/addStaffs";
 	}
 
-	@PostMapping("service-process")
-	public String addServices(ModelMap model,@RequestParam("photo2") MultipartFile image, @RequestParam("name") String name, @RequestParam("price") float price) {
+	@PostMapping("add-staffs")
+	public String addServices(ModelMap model,@RequestParam("photo") MultipartFile image, @RequestParam("name") String name, @RequestParam("gender") boolean gender,
+			@RequestParam("birthday") Date birthday,
+			@RequestParam("email") String email, @RequestParam("phone") String phone,
+			@RequestParam("salary") int salary) {
 		System.out.println(name);
-		System.out.println(price);
 		String photo = uploadImage(model, image);
-		if (serviceService.Create(new Services(name, price, photo)) == true) {
-			model.addAttribute("services", serviceService.list());
-			return "redirect: service";
+		if (staffService.Create(new Staffs(name, gender, birthday, photo, email, phone, salary)) == true) {
+			model.addAttribute("services", staffService.list());
+			return "redirect: staffs";
 		} else {
 			model.addAttribute("error", "Thêm phòng ban thất bại");
-			return "redirect: service-add";
+			return "redirect: staffs-add";
 		}
 	}
 
-	@GetMapping(value = "/service-delete/{id}")
-	public String Delete(Model model, @PathVariable("id") int serviceId) {
-		Services services = serviceService.findById(serviceId);
-		serviceService.Delete(services);
-		model.addAttribute("service", serviceService.list());
+	@GetMapping(value = "/staffs-delete/{id}")
+	public String Delete(Model model, @PathVariable("id") int staffsId) {
+		Staffs staffs = staffService.findById(staffsId);
+		staffService.Delete(staffs);
+		model.addAttribute("staffs", staffService.list());
 
-		return "redirect: /Spa_V1/admin/service	";
+		return "redirect: /Spa_V1/admin/staffs	";
 	}
 
-	@GetMapping(value = "/service-update/{id}")
-	public String update(Model model, @PathVariable("id") int serviceId) {
-		Services services = serviceService.findById(serviceId);
-		model.addAttribute("service", services);
+	@GetMapping(value = "/staffs-update/{id}")
+	public String update(Model model, @PathVariable("id") int staffsId) {
+		Staffs staffs = staffService.findById(staffsId);
+		model.addAttribute("staffs", staffs);
 		System.out.println("hihihihihihi");
-		return "admin/service/update";
+		return "admin/staffs/update";
 	}
 
-	@RequestMapping(value = "service-update2", method = RequestMethod.POST)
-	public String update2(ModelMap model, @RequestParam("id") int id, @RequestParam("name") String name,@RequestParam("photo2") MultipartFile image,
-			@RequestParam("price") float price) {
+	@RequestMapping(value = "update-staffs", method = RequestMethod.POST)
+	public String update2(ModelMap model, @RequestParam("id") int id,@RequestParam("photo") MultipartFile image, @RequestParam("name") String name,
+			@RequestParam("gender") boolean gender, @RequestParam("birthday") Date birthday,
+			 @RequestParam("email") String email,
+			@RequestParam("phone") String phone, @RequestParam("salary") int salary) {
 		System.out.println("áddasadsasd");
 		String photo = uploadImage(model, image);
-		if (serviceService.Update(new Services(id, name, price, photo)) == true) {
+		if (staffService.Update(new Staffs(id, name, gender, birthday, photo, email, phone, salary)) == true) {
 			System.out.println("hahahahahaah");
-			model.addAttribute("services", serviceService.list());
-			return "redirect: /Spa_V1/admin/service";
+			model.addAttribute("staffs", staffService.list());
+			return "redirect: /Spa_V1/admin/staffs";
 		} else {
 			model.addAttribute("error", "Thêm phòng ban thất bại");
 			return "redirect: service-add";
