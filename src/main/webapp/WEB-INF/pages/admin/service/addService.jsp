@@ -59,30 +59,30 @@
 	<!-- DataTales Example -->
 	<div class="card shadow mb-4">
 
-  	<div class="container">
-  <h2>Thêm dịch vụ</h2>
+  	<div style="padding: 50px" class="container">
+  <h2 style="margin-left: 50px">Thêm dịch vụ</h2>
   <form class="form-horizontal" action="service-process" method="POST" enctype="multipart/form-data">
     <div class="form-group">
-      <label class="control-label col-sm-2" for="email">Tên dịch vụ:</label>
+      <label style="margin-left: 20px" class="control-label col-sm-2" for="email">Tên dịch vụ:</label>
       <div class="col-sm-10">
         <input required type="text" class="form-control" id="" placeholder="Nhập tên dịch vụ" name="name">
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Giá:</label>
+      <label style="margin-left: 20px" class="control-label col-sm-2" for="pwd">Giá:</label>
       <div class="col-sm-10">          
         <input type="number" required class="form-control" id="" placeholder="Nhập giá dịch vụ" name="price">
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="pwd">Ảnh:</label>
+      <label style="margin-left: 20px" class="control-label col-sm-2" for="pwd">Ảnh:</label>
       <div class="col-sm-10">          
-        <input type="file"  id="photo" required accept="image/gif, image/jpeg, image/png" name="photo2">
+        <input type="file"   id="photo" required accept="image/gif, image/jpeg, image/png" name="photo2">
       </div>
     </div>
     <div class="form-group">        
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Xác nhận</button>
+      <div  class="col-sm-offset-2 col-sm-10">
+        <button style="float: right;" type="submit" class="btn btn-success">Xác nhận</button>
       </div>
     </div>
   </form>

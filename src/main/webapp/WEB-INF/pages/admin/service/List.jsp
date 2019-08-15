@@ -57,10 +57,10 @@
 
 
 	<!-- Page Heading -->
-	<a class="btn btn-primary" href="service-add">
-										Thêm dịch vụ
-									</a>
 
+	<div class="card-header py-3">
+		<a class="btn btn-primary" href="service-add"> Thêm dịch vụ </a>
+	</div>
 
 	<!-- DataTales Example -->
 	<div class="card shadow mb-4">
@@ -86,18 +86,17 @@
 
 								<td>${item.name }</td>
 								<td>${item.price }</td>
-								<td><img alt="Image" width="150px" height="150px" src="${pageContext.request.contextPath}/resources/assets/img/${item.images}"></td>
-								<td>
-									<a class="btn btn-primary" href="service-update/${item.id }">
-										<i class="fa fa-edit"></i>
-									</a>
+								<td><img alt="Image" width="150px" height="150px"
+									src="${pageContext.request.contextPath}/resources/assets/img/${item.images}"></td>
+								<td><a class="btn btn-primary"
+									href="service-update/${item.id }"> <i class="fa fa-edit"></i>
+								</a>
 									<button
 										class="tabledit-delete-button btn btn-danger waves-effect waves-light"
 										data-href="service-delete/${item.id }" data-toggle="modal"
 										data-target="#confirm-delete">
 										<i class="fa fa-trash"></i>
-									</button>
-								</td>
+									</button></td>
 
 							</tr>
 						</c:forEach>
