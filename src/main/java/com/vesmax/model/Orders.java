@@ -46,6 +46,15 @@ public class Orders  {
 		this.orderStatus = orderStatus;
 		this.staffsOrders = staffsOrders;
 	}
+	
+
+	public Orders(Services services, Users users, Integer number, Date times, Integer orderStatus) {
+		this.services = services;
+		this.users = users;
+		this.number = number;
+		this.times = times;
+		this.orderStatus = orderStatus;
+	}
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
