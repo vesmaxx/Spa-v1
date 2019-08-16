@@ -24,27 +24,59 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name = "orders", schema = "dbo", catalog = "Qlspa")
-public class Orders  {
+public class Orders {
 
 	private Integer id;
 	private Services services;
 	private Users users;
 	private Integer number;
-	private Date times;
+	private String date;
+	private String minute;
+	private String seconds;
 	private Integer orderStatus;
-	private Set<StaffsOrder> staffsOrders = new HashSet<StaffsOrder>(0);
 
-	public Orders() {
-	}
-
-	public Orders(Services services, Users users, Integer number, Date times, Integer orderStatus,
-			Set<StaffsOrder> staffsOrders) {
+	public Orders(Services services, Users users, Integer number, String date, String minute, String seconds,
+			Integer orderStatus) {
+		super();
 		this.services = services;
 		this.users = users;
 		this.number = number;
-		this.times = times;
+		this.date = date;
+		this.minute = minute;
+		this.seconds = seconds;
 		this.orderStatus = orderStatus;
-		this.staffsOrders = staffsOrders;
+	}
+
+	@JoinColumn(name = "minute")
+	public String getMinute() {
+		return minute;
+	}
+
+	@JoinColumn(name = "date")
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public void setMinute(String minute) {
+		this.minute = minute;
+	}
+
+	@JoinColumn(name = "seconds")
+	public String getSeconds() {
+		return seconds;
+	}
+
+	public void setSeconds(String seconds) {
+		this.seconds = seconds;
+	}
+
+	private Set<StaffsOrder> staffsOrders = new HashSet<StaffsOrder>(0);
+
+	public Orders() {
 	}
 
 	@Id
@@ -86,16 +118,6 @@ public class Orders  {
 
 	public void setNumber(Integer number) {
 		this.number = number;
-	}
-
-	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "times", length = 23)
-	public Date getTimes() {
-		return this.times;
-	}
-
-	public void setTimes(Date times) {
-		this.times = times;
 	}
 
 	@Column(name = "order_status")

@@ -216,9 +216,10 @@
 				<div class="col-lg-10 col-md-10 d-none d-lg-block text-right">
 					<nav class="main-menu">
 					<ul>
-						<li class="active"><a href="#">Home</a></li>
+						<li class="active"><a href="${pageContext.request.contextPath}">Home</a></li>
 						<li><a href="services.html">Service</a></li>
-						
+						<li><a href="admin/datlich">Booking</a></li>
+						<li><a href="booking">Booking2</a></li>
 						<li class="c-dropdowns"><a href="">Portfolio</a>
 							<ul class="cr-dropdown-menu">
 								<li><a href="portfolio-2-column.html">Portfolio 2
