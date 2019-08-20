@@ -57,11 +57,8 @@
 
 
 	<!-- Page Heading -->
-	<a class="btn btn-primary" href="staffs-add">
-										Thêm nhân viên
-									</a>
-
-
+	<a class="btn btn-success" href="staffs-add"  style=" width:80px ;margin-bottom: 20px"
+		>New</a>
 	<!-- DataTales Example -->
 	<div class="card shadow mb-4">
 		<div class="card-body">
@@ -83,19 +80,18 @@
 							<tr>
 								<td>${item.name }</td>
 								<td>${item.gender ? 'Nam' : 'Nữ'}</td>
-								<td><img alt="Image" width="150px" height="150px" src="${pageContext.request.contextPath}/resources/assets/img/${item.photo}"></td>
+								<td><img alt="Image" width="150px" height="150px"
+									src="${pageContext.request.contextPath}/resources/assets/img/${item.photo}"></td>
 								<td>${item.email}</td>
-								<td>
-									<a class="btn btn-primary" href="staffs-update/${item.id }">
-										<i class="fa fa-edit"></i>
-									</a>
+								<td><a class="btn btn-primary"
+									href="staffs-update/${item.id }"> <i class="fa fa-edit"></i>
+								</a>
 									<button
 										class="tabledit-delete-button btn btn-danger waves-effect waves-light"
 										data-href="staffs-delete/${item.id }" data-toggle="modal"
 										data-target="#confirm-delete">
 										<i class="fa fa-trash"></i>
-									</button>
-								</td>
+									</button></td>
 
 							</tr>
 						</c:forEach>

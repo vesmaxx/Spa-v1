@@ -59,7 +59,7 @@
 	<!-- Page Heading -->
 
 	<div class="card-header py-3">
-		<a class="btn btn-primary" href="service-add"> Thêm dịch vụ </a>
+		<a class="btn btn-success" style="width: 70px; magin-bottom: 50px" href="service-add"> New </a>
 	</div>
 
 	<!-- DataTales Example -->

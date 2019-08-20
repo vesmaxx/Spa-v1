@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -159,6 +160,9 @@
 				</div></li>
 
 			<!-- Nav Item - Charts -->
+			<li class="nav-item"><a class="nav-link" href="image-list">
+					<i class="fas fa-fw fa-chart-area"></i> <span>Image</span>
+			</a></li>
 			<li class="nav-item"><a class="nav-link" href="user-list"> <i
 					class="fas fa-fw fa-chart-area"></i> <span>User</span>
 			</a></li>
@@ -169,7 +173,8 @@
 			<li class="nav-item"><a class="nav-link" href="staffs"> <i
 					class="fas fa-fw fa-chart-area"></i> <span>Staff</span>
 			</a></li>
-			</a></li>
+			</a>
+			</li>
 			<li class="nav-item"><a class="nav-link" href="order"> <i
 					class="fas fa-fw fa-chart-area"></i> <span>Order</span>
 			</a></li>

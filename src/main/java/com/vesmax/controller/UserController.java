@@ -26,8 +26,6 @@ public class UserController {
 
 	@GetMapping(value = "/user-delete/{id}")
 	public String Delete(Model model, @PathVariable("id") int User_ID) {
-		System.out.println("go delete");
-		System.out.println(User_ID + "ID");
 		userService.Delete(User_ID);
 		model.addAttribute("admin", userService.list());
 		return "redirect: /Spa_V1/admin/user-list";

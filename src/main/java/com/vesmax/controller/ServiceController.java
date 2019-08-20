@@ -20,7 +20,7 @@ import com.vesmax.service.ServiceService;
 import com.vesmax.service.ServiceServiceimpl;
 
 @Controller
-@RequestMapping(value = "/admin/")
+@RequestMapping(value = "admin/")
 public class ServiceController {
 	ServiceService serviceService = new ServiceServiceimpl();
 	@Autowired
@@ -65,7 +65,6 @@ public class ServiceController {
 	public String update(Model model, @PathVariable("id") int serviceId) {
 		Services services = serviceService.findById(serviceId);
 		model.addAttribute("service", services);
-		System.out.println("hihihihihihi");
 		return "admin/service/update";
 	}
 
@@ -83,21 +82,4 @@ public class ServiceController {
 		}
 	}
 
-	// public String uploadImage(ModelMap map, MultipartFile image) {
-	// if (image.isEmpty()) {
-	// System.out.println("File error");
-	// return "";
-	// } else {
-	// try {
-	// String path = ctx.getRealPath("/resources/assets/img/") +
-	// image.getOriginalFilename();
-	// System.out.println("do upload"+path);
-	// image.transferTo(new File(path));
-	// return image.getOriginalFilename();
-	// } catch (Exception e) {
-	// System.out.println("Loi: " + e);
-	// return "";
-	// }
-	// }
-	// }
 }
