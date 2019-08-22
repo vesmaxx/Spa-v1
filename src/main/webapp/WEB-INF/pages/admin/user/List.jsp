@@ -57,22 +57,14 @@
 	</script>
 	
 	<script>
-	$(document).ready(function(){
-		  $('#update').click(function(){
-		  var name =  $('#name').text()
-		   var email =  $('#email').text()
-		    var birth =  $('#birthday').text() 
-		   /*  var role =  $('#role').text() */
-		  
-		  $('#FieldName').val(name)
-		  $('#FieldEmail').val(email)
-		   $('#FieldBirthDay').val(birth)
-		  
-		  
-		  
-		    
-		  });
-		});
+
+		
+ function clickEvt(name,email,birth) {
+			  $('#FieldName').val(name)
+			  $('#FieldEmail').val(email)
+			   $('#FieldBirthDay').val(birth)
+		} 
+		
 	</script>
 		
 		
@@ -152,9 +144,9 @@
 					</thead>
 
 					<tbody>
-						<c:forEach items="${admin }" var="item">
+						<c:forEach items="${admin}" var="item">
 
-							<tr>
+							<tr  >
 								
 								<td id ="name">${item.name }</td>
 								<td id ="email">${item.email }</td>
@@ -172,8 +164,8 @@
 									</c:when>
 								</c:choose>
 								<td>
-									<button class="btn btn-primary" id="update"
-										data-href="image-delete/${item.id }" data-toggle="modal"
+									<button  onclick="clickEvt(`${item.name}`,`${item.email}`,`${item.birthday}`)" class="btn btn-primary update" 
+										 data-toggle="modal"
 										data-target="#confirm-add"
 										
 									>
