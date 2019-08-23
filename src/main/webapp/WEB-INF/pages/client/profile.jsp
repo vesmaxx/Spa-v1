@@ -37,6 +37,17 @@
                                 </svg>
                             </label>
                         </span>
+                        
+                        
+                         <label class="title-profile">Phone : </label>
+                        <span class="input input--hantus">
+                            <input value="${item.photo }" name="FieldPhone" class="input__field input__field--hantus" type="text"  id="input-04">
+                            <label class="input__label input__label--hantus" for="input-04">
+                                <svg class="graphic graphic--hantus" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
+                                <path d="m0,0l404,0l0,77l-404,0l0,-77z"></path>
+                                </svg>
+                            </label>
+                        </span>
 						
 						 <label class="title-profile">Birthday: </label>
                         <span class="input input--hantus">

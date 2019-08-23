@@ -21,18 +21,33 @@ public class Images  {
 	private String title;
 	private String content;
 	private String description;
+	private Integer image_type;
 
 	public Images() {
 	}
 
 	
 
-	public Images(String photo, String title, String content, String description) {
+	public Images(String photo, String title, String content, String description, Integer image_type) {
 		super();
 		this.photo = photo;
 		this.title = title;
 		this.content = content;
 		this.description = description;
+		this.image_type = image_type;
+	}
+	
+	
+
+
+	public Integer getImage_type() {
+		return image_type;
+	}
+
+
+
+	public void setImage_type(Integer image_type) {
+		this.image_type = image_type;
 	}
 
 

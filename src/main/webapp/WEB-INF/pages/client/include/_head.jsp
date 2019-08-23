@@ -217,41 +217,17 @@
 					<nav class="main-menu">
 					<ul>
 						<li class="active"><a href="${pageContext.request.contextPath}">Home</a></li>
-						<li><a href="services.html">Service</a></li>
-						<li><a href="admin/datlich">Booking</a></li>
-						<li><a href="booking">Booking2</a></li>
-						<li class="c-dropdowns"><a href="">Portfolio</a>
-							<ul class="cr-dropdown-menu">
-								<li><a href="portfolio-2-column.html">Portfolio 2
-										Column</a></li>
-								<li><a href="portfolio-3-column.html">Portfolio 3
-										Column</a></li>
-								<li><a href="portfolio-4-column.html">Portfolio 4
-										Column</a></li>
-							</ul></li>
-						<li class="c-dropdowns"><a href="">Pages</a>
-							<ul class="cr-dropdown-menu">
-								<li><a href="about-us.html">About</a></li>
-								<li><a href="pricing.html">Pricing</a></li>
-								<li><a href="">Other Pages</a>
-									<ul class="cr-sub-dropdown-menu">
-										<li><a href="404.html">404 Page</a></li>
-										<li><a href="coming-soon.html">Coming Soon</a></li>
-									</ul></li>
-							</ul></li>
-						<li class="c-dropdowns"><a href="">Blog</a>
-							<ul class="cr-dropdown-menu">
-								<li><a href="blog-left-sidebar.html">Blog Left Sidebar</a>
-								</li>
-								<li><a href="blog-right-sidebar.html">Blog Right
-										Sidebar</a></li>
-								<li><a href="blog-full-width.html">Blog Full Width</a></li>
-								<li><a href="blog-single.html">Blog Details</a></li>
-							</ul></li>
+						<li><a href="service">Service</a></li>
+						
+						<li><a href="booking">Booking</a></li>
+						
+						
+						
 
-						<li><a href="gallery.html">Gallery</a></li>
-						<li><a href="contact-us.html">Contact</a></li>
+						<li><a href="gallery">Gallery</a></li>
+						
 						<li><a href="profile" id="profile" >Profile</a></li>
+						<li><a href="orderHistory">History</a></li>
 						<li class="cart-icon">
 							<div id="cd-cart-trigge" class="cart-icon-wrapper cart--open">
 								<i class="ei ei-icon_bag_alt"></i> <span class="cart-count">2</span>

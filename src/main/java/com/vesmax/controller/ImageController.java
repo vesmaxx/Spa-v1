@@ -35,7 +35,8 @@ public class ImageController {
 			@RequestParam("FieldTitle") String title,
 			@RequestParam("FieldContent") String content,
 			@RequestParam("FieldDescription") String description,
-			@RequestParam("FieldPhoto") MultipartFile image
+			@RequestParam("FieldPhoto") MultipartFile image,
+			@RequestParam("FieldType") Integer image_type
 			) {
 		System.out.println("-----"+ title);
 		System.out.println("-----"+ content);
@@ -43,7 +44,7 @@ public class ImageController {
 		System.out.println("-----"+ image);
 		String photo = UploadConfig.uploadImage(model, image);
 
-		imageDao.Create(new Images(photo, title, content, description));
+		imageDao.Create(new Images(photo, title, content, description,image_type));
 
 		
 		return "redirect: /Spa_V1/admin/image-list";

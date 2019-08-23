@@ -1,6 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=Utf-8"
+	pageEncoding="Utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
 
  <jsp:include page="../include/_head.jsp"></jsp:include>
 
@@ -26,8 +28,9 @@
 							<th>Number</th>
 							<th>Date</th>
 							<th>House</th>
-							
-							<th>Trang thai</th>
+							<th>Location</th>
+							<th>Round</th>
+							<th>Status</th>
 							<th>Action</th>
 
 
@@ -41,23 +44,51 @@
 
  								<td>${item.users.name }</td>
 								<td>${item.services.name }</td>
-								<td>${item.number }</td>
-								<td>${item.date }</td>
+								<td>${item.number } Preson</td>
+								
+								<c:set var="string" value=" ${item.date }"/>  
+  
+								
+								<td>${fn:substring(string, 0, 12)} </td>
 								<td>${item.minute } : ${item.seconds }</td>
-								<td>${item.orderStatus }</td>
+								<td>
+								<c:choose>
+								<c:when test="${item.location == 1}"> 1 ngày</c:when>
+								<c:when test="${item.location == 2}"> 2 ngày</c:when>
+								<c:when test="${item.location == 3}"> 3 ngày</c:when>
+								<c:when test="${item.location == 4}"> 4 ngày</c:when>
+								
+								<c:otherwise>5 ngày</c:otherwise>
+								</c:choose>
+								</td>
+								<td>
+								<c:choose>
+								<c:when test="${item.round == 0}"> Làm tại quán</c:when>
+								<c:otherwise>Làm tại nhà</c:otherwise>
+								</c:choose>
+								</td>
+								
+								<td>
+								<c:choose>
+								<c:when test="${item.orderStatus==0}">thanh toán</c:when>
+								<c:when test="${item.orderStatus == 1}">hoạt động</c:when>
+								
+								
+								<c:otherwise>Đang chờ</c:otherwise>
+								</c:choose>
+								</td>
 								<td>
 									
 									<a
-										class=" btn btn-danger waves-effect "
-										href="duyet/${item.id }"
-										>duyet
-										<i class="fa fa-trash"></i>
+										class=" btn btn-primary  "
+										href="confirm/${item.id }"
+										><i class="fa fa-check" aria-hidden="true"></i>
 									</a>
+									
 									<a
-										class=" btn btn-danger waves-effect waves-light"
-										href="tuchoi/${item.id }"
-										title="thanh toán">thanh toan
-										<i class="fa fa-trash"></i>
+										class=" btn btn-success w "
+										href="Success/${item.id }"
+										><i class="fa fa-cart-plus" aria-hidden="true"></i>
 									</a>
 								</td>
 

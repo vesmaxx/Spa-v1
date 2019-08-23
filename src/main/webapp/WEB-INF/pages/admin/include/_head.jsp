@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -366,8 +366,7 @@
 						class="nav-link dropdown-toggle" href="#" id="userDropdown"
 						role="button" data-toggle="dropdown" aria-haspopup="true"
 						aria-expanded="false"> <span
-							class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie
-								Luna</span> <img class="img-profile rounded-circle"
+							class="mr-2 d-none d-lg-inline text-gray-600 small">${Email }</span> <img class="img-profile rounded-circle"
 							src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
 					</a> <!-- Dropdown - User Information -->
 						<div

@@ -34,6 +34,18 @@ public class Users  {
 
 	public Users() {
 	}
+	
+	
+	public Users(Integer id, String email, Integer roles, String name, String birthday, String photo) {
+		super();
+		this.id = id;
+		this.email = email;
+		this.roles = roles;
+		this.name = name;
+		this.birthday = birthday;
+		this.photo = photo;
+	}
+
 
 	public Users(String email, String passwords, Integer roles, String name, Boolean gender,
 			String birthday, String photo, Boolean custormerStatus, Set<Orders> orderses) {
@@ -61,7 +73,7 @@ public class Users  {
 
 
 	public Users(Integer id, String email, String passwords, Integer roles, String name, Boolean gender,
-			String birthday, Boolean custormerStatus) {
+			String birthday, Boolean custormerStatus, String photo) {
 		super();
 		this.id = id;
 		this.email = email;
@@ -71,6 +83,7 @@ public class Users  {
 		this.gender = gender;
 		this.birthday = birthday;
 		this.custormerStatus = custormerStatus;
+		this.photo =photo;
 	}
 
 	@Id
