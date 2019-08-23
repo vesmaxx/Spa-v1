@@ -53,23 +53,22 @@
 		setTimeout(function() {
 			$('#HidemyDIV').fadeOut('slow');
 		}, 1000);
-		
 	</script>
-	
-	<script>
 
-		
- function clickEvt(name,email,birth) {
-			  $('#FieldName').val(name)
-			  $('#FieldEmail').val(email)
-			   $('#FieldBirthDay').val(birth)
-		} 
-		
+	<script>
+		function clickEvt(name, roles,id, email, birth,phone) {
+			$('#FieldName').val(name)
+			$('#FieldEmail').val(email)
+			$('#FieldBirthDay').val(birth)
+			$('#FieldRole').val(roles)
+			$('#FieldID').val(id)
+			$('#FieldPhone').val(phone)
+		}
 	</script>
-		
-		
-		
-		<form action="update-user" method="post" enctype="multipart/form-data">
+
+
+
+	<form action="user-update" method="post" enctype="multipart/form-data">
 		<div class="modal fade" id="confirm-add" tabindex="-1" role="dialog"
 			aria-labelledby="myModalLabel" aria-hidden="true">
 			<div style="top: 17%;" class="modal-dialog">
@@ -84,25 +83,34 @@
 							class="modal-title" id="myModalLabel">Update User</h2>
 					</div>
 					<div class="modal-body">
-					
-					<label style="margin-left: 20px" class="mr-sm-2" >Email</label> 
-						<input id="FieldEmail" type="text" class="form-control"
-							name="FieldEmail"> 
+						<input type="hidden" id="FieldID" name ="FieldID" >
 						
-
-						<label style="margin-left: 20px; margin-top: 10px" class="mr-sm-2" >Name</label> 
+						<label style="margin-left: 20px" class="mr-sm-2">Email</label> <input
+							id="FieldEmail" type="text" class="form-control"
+							name="FieldEmail"> <label
+							style="margin-left: 20px; margin-top: 10px" class="mr-sm-2">Name</label>
 						<input id="FieldName" type="text" class="form-control"
 							name="FieldName"> 
-						
-					
 							
-						<label style="margin-left: 20px ; margin-top: 10px" class="mr-sm-2">Birthday</label> 
-						<input
-							type="date" id="FieldBirthDay" class="form-control" name="FieldBirthDay"> 
-						<label style="margin-left: 20px ; margin-top: 10px" class="mr-sm-2">Role</label>
-						<input type="text" class="form-control" name="FieldDescription">
+							 <label
+							style="margin-left: 20px; margin-top: 10px" class="mr-sm-2">Phone</label>
+						<input id="FieldPhone" type="text" class="form-control"
+							name="FieldPhone">
+							
+							<label
+							style="margin-left: 20px; margin-top: 10px" class="mr-sm-2">Birthday</label>
+						<input type="date" id="FieldBirthDay" class="form-control"
+							name="FieldBirthDay"> <label
+							style="margin-left: 20px; margin-top: 10px" class="mr-sm-2">Role</label>
 						
-						
+<!-- 						<input type="text" class="form-control" id="FieldRole" name="FieldRole">
+ -->						<select class="form-control" id="FieldRole" name="FieldRole">
+							<option value="10">Admin</option>
+							<option value="2">Model</option>
+							<option value="1" >User</option>
+						</select>
+
+
 
 						<p style="text-align: center; font-size: 19px;"></p>
 						<p
@@ -113,7 +121,7 @@
 
 					<div class="modal-footer">
 						<button type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button>
-						<button style="margin-right: 40%" class="btn btn-success btn-ok">Add</button>
+						<button style="margin-right: 40%" class="btn btn-success btn-ok">Update</button>
 					</div>
 				</div>
 			</div>
@@ -122,7 +130,7 @@
 
 	<!-- Page Heading -->
 	<h1 style="margin: 50px;" class="h3 mb-2 text-gray-800"></h1>
-	
+
 
 	<!-- DataTales Example -->
 	<div class="card shadow mb-4">
@@ -136,6 +144,7 @@
 							<th>Name</th>
 							<th>Email</th>
 							<th>Birthday</th>
+							<th>Phone</th>
 							<th>Role</th>
 							<th>Action</th>
 
@@ -146,33 +155,27 @@
 					<tbody>
 						<c:forEach items="${admin}" var="item">
 
-							<tr  >
-								
-								<td id ="name">${item.name }</td>
-								<td id ="email">${item.email }</td>
-								<td id="birthday">${item.birthday }</td>
+							<tr>
 
-								<c:choose>
-									<c:when test="${item.roles=='1'}">
-										<td id="role" >User</td>
-									</c:when>
-									<c:when test="${item.roles=='10'}">
-										<td id="role">Admin</td>
-									</c:when>
-									<c:when test="${item.roles=='2'}">
-										<td id="role">Mod</td>
-									</c:when>
-								</c:choose>
+								<td id="name">${item.name }</td>
+								<td id="email">${item.email }</td>
+								<td id="birthday">${item.birthday }</td>
+								<td id="phone">${item.photo }</td>
+								<td id="role"><c:choose>
+										<c:when test="${item.roles=='10'}">Admin</c:when>
+										<c:when test="${item.roles=='2'}">Mod</c:when>
+										<c:otherwise>User</c:otherwise>
+									</c:choose></td>
+
 								<td>
-									<button  onclick="clickEvt(`${item.name}`,`${item.email}`,`${item.birthday}`)" class="btn btn-primary update" 
-										 data-toggle="modal"
-										data-target="#confirm-add"
-										
-									>
+									<button
+										onclick="clickEvt(`${item.name}`,`${item.roles}`,`${item.id}`,`${item.email}`,`${item.birthday}`,`${item.photo}`)"
+										class="btn btn-primary update" data-toggle="modal"
+										data-target="#confirm-add">
 										<i class="fa fa-edit"></i>
 									</button>
-									
-									
+
+
 									<button
 										class="tabledit-delete-button btn btn-danger waves-effect waves-light"
 										data-href="user-delete/${item.id }" data-toggle="modal"

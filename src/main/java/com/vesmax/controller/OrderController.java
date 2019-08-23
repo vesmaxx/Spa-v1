@@ -1,13 +1,10 @@
 package com.vesmax.controller;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -15,14 +12,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.vesmax.dao.OrderDao;
 import com.vesmax.dao.StaffsOrderDao;
-import com.vesmax.model.Orders;
 import com.vesmax.model.Services;
-import com.vesmax.model.Staffs;
-import com.vesmax.model.StaffsOrder;
 import com.vesmax.service.ServiceServiceimpl;
 import com.vesmax.service.UserService;
 import com.vesmax.service.UserServiceimpl;
@@ -83,21 +76,19 @@ public class OrderController {
 	@GetMapping(value = "order")
 	public String List(Model model) {
 		model.addAttribute("admin", order.getList());
-		System.out.println("admin");
 		return "admin/Order/list";
 	}
 
-	@GetMapping(value = "duyet/{id}")
+	@GetMapping(value = "confirm/{id}")
 	public String duyet(Model model, @PathVariable("id") int id) {
-		System.out.println("go duyet");
 		try {
 			order.duyet(id);
 			if (order.duyet(id)) {
-				List<String> idStaffs = order.liststaff2(id);
-				System.out.println(order.liststaff2(id));
-				System.out.println("-------"+idStaffs.indexOf(0));
-				for (int i = 0 ; i < idStaffs.size();i++) {
-					order.updatastaff(idStaffs.indexOf(i+1));
+				List<Integer> idStaffs = order.liststaff2(id);
+				System.out.println("start");
+				for (Integer idInteger : idStaffs) {
+					order.updatastaff(idInteger);
+
 				}
 			}
 			model.addAttribute("admin", order.getList());
@@ -107,15 +98,14 @@ public class OrderController {
 		}
 	}
 
-	@GetMapping(value = "tuchoi/{id}")
+	@GetMapping(value = "Success/{id}")
 	public String tuchoi(Model model, @PathVariable("id") int id) {
-		System.out.println("go tu choi");
-		System.out.println("-------------" + order.liststaff1(id));
 		order.tuchoi(id);
-		if (order.tuchoi(id) == true) {
-			List<Staffs> idStaffs = order.liststaff1(id);
-			for (Staffs idString : idStaffs) {
-				order.updatatuchoi(idString.getId());
+		if (order.tuchoi(id)) {
+			List<Integer> idStaffs = order.liststaff2(id);
+
+			for (Integer idString : idStaffs) {
+				order.updatatuchoi(idString);
 			}
 
 		}

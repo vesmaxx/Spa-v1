@@ -22,7 +22,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name = "staffs", schema = "dbo", catalog = "Qlspa")
-public class Staffs  {
+public class Staffs {
 
 	private Integer id;
 	private String name;
@@ -34,12 +34,13 @@ public class Staffs  {
 	private int salary;
 	private Integer staffStatus;
 	private Set<StaffsOrder> staffsOrders = new HashSet<StaffsOrder>(0);
+	
+
 
 	public Staffs() {
 	}
 
-	public Staffs(String name, boolean gender, Date birthday, String photo, String email,
-			String phone, int salary) {
+	public Staffs(String name, boolean gender, Date birthday, String photo, String email, String phone, int salary) {
 		this.name = name;
 		this.gender = gender;
 		this.birthday = birthday;
@@ -62,8 +63,8 @@ public class Staffs  {
 		this.salary = salary;
 	}
 
-	public Staffs(String name, boolean gender, Date birthday, String photo, String email,
-			String phone, int salary, Integer staffStatus, Set<StaffsOrder> staffsOrders) {
+	public Staffs(String name, boolean gender, Date birthday, String photo, String email, String phone, int salary,
+			Integer staffStatus, Set<StaffsOrder> staffsOrders) {
 		this.name = name;
 		this.gender = gender;
 		this.birthday = birthday;
@@ -104,7 +105,6 @@ public class Staffs  {
 	public void setGender(boolean gender) {
 		this.gender = gender;
 	}
-
 
 	@Column(name = "Birthday", nullable = false, length = 10)
 	public Date getBirthday() {

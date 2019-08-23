@@ -41,8 +41,8 @@
 
 								</select>
 								<div class="dtb">
-									<input type="date" name="date"> 
-									<select name="number">
+									<input type="date" name="date" style="width: 50%"> 
+									<select name="number" style="width: 46%">
 										<option value="1">1 person</option>
 										<option value="2">2 person</option>
 										<option value="3">3 person</option>
@@ -51,8 +51,8 @@
 								</div>
 								<div class="dtb">
 									<select name="minute">
-										<option value="8">08</option>
-										<option value="9">09</option>
+										<option value="08">08</option>
+										<option value="09">09</option>
 										<option value="10">10</option>
 										<option value="11">11</option>
 										<option value="12">12</option>
@@ -74,6 +74,25 @@
 										<option value="40">40</option>
 										<option value="50">50</option>
 									</select>
+									
+									<select name="round" style="width: 152px">
+										<option value="1">1 Ngày</option>
+										<option value="2">2 Ngày</option>
+										<option value="3">3 Ngày</option>
+										<option value="4">4 Ngày</option>
+										<option value="5">5 Ngày</option>
+										
+									</select>
+								</div>
+								
+								
+								<div class="dtb">
+									<select name="location" style="width: 100%">
+										<option value="1">Làm tại nhà</option>
+										<option value="0">Làm tại quán</option>
+										
+									</select> 
+									
 								</div>
 
 

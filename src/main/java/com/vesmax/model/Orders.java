@@ -33,6 +33,8 @@ public class Orders {
 	private String date;
 	private String minute;
 	private String seconds;
+	private String location;
+	private String round;
 	private Integer orderStatus;
 
 	public Orders(Services services, Users users, Integer number, String date, String minute, String seconds,
@@ -46,6 +48,43 @@ public class Orders {
 		this.seconds = seconds;
 		this.orderStatus = orderStatus;
 	}
+	
+
+	public Orders(Services services, Users users, Integer number, String date, String minute, String seconds,
+			String location, String round, Integer orderStatus) {
+		super();
+		this.services = services;
+		this.users = users;
+		this.number = number;
+		this.date = date;
+		this.minute = minute;
+		this.seconds = seconds;
+		this.location = location;
+		this.round = round;
+		this.orderStatus = orderStatus;
+	}
+	
+
+	@JoinColumn(name = "location")
+	public String getLocation() {
+		return location;
+	}
+
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	@JoinColumn(name = "location")
+	public String getRound() {
+		return round;
+	}
+
+
+	public void setRound(String round) {
+		this.round = round;
+	}
+
 
 	@JoinColumn(name = "minute")
 	public String getMinute() {
